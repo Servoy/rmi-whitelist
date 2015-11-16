@@ -21,9 +21,8 @@ import java.rmi.server.RMIClassLoader;
 import java.rmi.server.RMIClassLoaderSpi;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Rob Gansevles
@@ -32,8 +31,8 @@ import org.slf4j.LoggerFactory;
 public class WhitelistingRMIClassLoaderSpi extends RMIClassLoaderSpi {
 
 	public static final String CONFIG_PROPERTY = "rmi.whitelist.config";
-	
-	static final Logger LOGGER = LoggerFactory
+
+	static final Logger LOGGER = Logger
 			.getLogger(WhitelistingRMIClassLoaderSpi.class.getName());
 
 	final RMIClassLoaderSpi delegate;
@@ -92,7 +91,7 @@ public class WhitelistingRMIClassLoaderSpi extends RMIClassLoaderSpi {
 	}
 
 	private static void block(String message) throws ClassNotFoundException {
-		LOGGER.warn(message);
+		LOGGER.log(Level.WARNING, message);
 		throw new ClassNotFoundException(message);
 	}
 
