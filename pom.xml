@@ -21,6 +21,10 @@
 		</developer>
 	</developers>
 
+	<scm>
+		<connection>scm:git:https://github.com/servoy/rmi-whitelist.git</connection>
+	</scm>
+
 	<build>
 		<plugins>
 			<plugin>
