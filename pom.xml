@@ -26,6 +26,19 @@
 	</scm>
 
 	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+				<!-- No artifactory -->
+					<artifactId>maven-source-plugin</artifactId>
+					<configuration>
+						<attach>false</attach>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
